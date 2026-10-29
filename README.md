@@ -31,3 +31,16 @@ Add an entry to `STORES` in `index.html` and set that store's board `ROOM_NAME` 
 ## Game
 
 Set `GAME.url` in `index.html` when the Soluna game is published and it will load inside the arch frame on the Game tab.
+
+## NFC tags
+
+Write one **URI record** to each tag (NTAG213/215/216 all work):
+
+```
+https://gabrielman25.github.io/soluna-coffee/?tap=elyson-1NQW26
+```
+
+- Tapping any NFC phone (iPhone XS or newer, Android with NFC on) opens the site on the Elyson Rewards tab and adds today's 5 points.
+- With the site already open in Chrome on Android, "Turn on tap to collect" lets the page read the tag in place.
+- Tag taps and board codes share the same once-a-day check-in (resets at 4 AM).
+- The `elyson-1NQW26` part is checked by the site; a new store gets its own value from `tapCheck(storeId)`.
